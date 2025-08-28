@@ -39,7 +39,7 @@ export const itemVariants = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: "easeOut"
+      ease: "easeOut" as const
     }
   }
 };
@@ -73,7 +73,7 @@ export const imageVariants = {
     y: 0,
     transition: {
       duration: 1.2,
-      ease: "easeOut"
+      ease: "easeOut" as const
     }
   }
 };
@@ -88,7 +88,7 @@ export const textVariants = {
     x: 0,
     transition: {
       duration: 1,
-      ease: "easeOut"
+      ease: "easeOut" as const
     }
   }
 };
@@ -105,7 +105,7 @@ export const cardVariants = {
     x: 0,
     transition: {
       duration: 0.8,
-      ease: "easeOut"
+      ease: "easeOut" as const
     }
   }
 };
@@ -120,7 +120,7 @@ export const fadeInVariants = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: "easeOut"
+      ease: "easeOut" as const
     }
   }
 };
@@ -135,7 +135,7 @@ export const slideInVariants = {
     x: 0,
     transition: {
       duration: 1,
-      ease: "easeOut"
+      ease: "easeOut" as const
     }
   }
 };
@@ -150,7 +150,7 @@ export const slideInRightVariants = {
     x: 0,
     transition: {
       duration: 1,
-      ease: "easeOut"
+      ease: "easeOut" as const
     }
   }
 };
