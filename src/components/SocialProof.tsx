@@ -74,7 +74,7 @@ export default function SocialProof() {
               
               {/* Testimonial Text */}
               <p className="text-gray-700 mb-6 italic text-center">
-                "{testimonial.text}"
+                &ldquo;{testimonial.text}&rdquo;
               </p>
               
               {/* Author */}

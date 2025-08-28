@@ -1,59 +1,117 @@
 'use client';
 
-import { ArrowRight, Play } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Efecto parallax: la imagen se expande mientras scrolleas
+  const parallaxScale = 1 + (scrollY * 0.0005); // Escala de 1 a 1.5
+  const parallaxY = scrollY * 0.5; // Movimiento vertical suave
+
   return (
-    <section id="hero" className="pt-20 pb-16 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-8">
-            <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-            Nueva funcionalidad disponible
-          </div>
-
-          {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Transforma tu negocio con
-            <span className="text-blue-600 block">nuestra solución</span>
-          </h1>
-
-          {/* Subtitle */}
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Descubre cómo nuestra plataforma puede revolucionar tu empresa. 
-            Aumenta la productividad, mejora la eficiencia y alcanza tus objetivos más rápido.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <button className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-200 flex items-center gap-2 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-              Empezar Gratis
-              <ArrowRight size={20} />
-            </button>
-            <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all duration-200 flex items-center gap-2 text-lg font-semibold">
-              <Play size={20} />
-              Ver Demo
-            </button>
-          </div>
-
-          {/* Trust Indicators */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-gray-500">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              Sin tarjeta de crédito
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              Configuración en 5 minutos
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              Soporte 24/7
-            </div>
+    <main id="hero" className="mb-32">
+      {/* Imagen principal con efecto parallax */}
+      <div className="relative h-[600px] overflow-hidden">
+        <div className="w-full h-full">
+          <img 
+            alt="Imagen de montaña y naturaleza para Adam Rezuc" 
+            className="w-full h-full object-cover" 
+            style={{
+              transform: `scale(${parallaxScale}) translateY(${parallaxY}px)`,
+              transition: 'transform 0.1s ease-out'
+            }}
+            src="https://images.pexels.com/photos/18926515/pexels-photo-18926515.jpeg"
+          />
+        </div>
+        
+        {/* Overlay con slogan que aparece con scroll */}
+        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+          <div className="text-center text-white">
+            <motion.p 
+              className="text-2xl md:text-3xl font-light tracking-wide"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              Tu estadía cómoda y segura en San Martín de los Andes
+            </motion.p>
           </div>
         </div>
       </div>
-    </section>
+
+      {/* Contenido principal */}
+              <motion.div 
+          className="flex flex-col mt-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                duration: 0.8,
+                staggerChildren: 0.2
+              }
+            }
+          }}
+        >
+        <motion.div 
+          className="mb-6 md:w-1/2"
+          variants={{
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0 }
+          }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <h2 className="text-4xl md:text-5xl font-normal leading-tight">
+            Adam Rezuc, Tu experiencia de lujo en la montaña
+          </h2>
+        </motion.div>
+        <motion.div 
+          className="flex justify-end"
+          variants={{
+            hidden: { opacity: 0, x: 50 },
+            visible: { opacity: 1, x: 0 }
+          }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <div className="md:w-1/2 text-right">
+            <motion.p 
+              className="text-base text-gray-600 leading-relaxed mb-8"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              Te invito a disfrutar mi departamento en el corazón de la ciudad. Gestiono directamente cada reserva, 
+              ofreciendo una experiencia segura, transparente y de confianza para tu estadía.
+            </motion.p>
+            <motion.div 
+              className="border-t border-gray-300 pt-6"
+              variants={{
+                hidden: { scaleX: 0 },
+                visible: { scaleX: 1 }
+              }}
+              transition={{ duration: 1, ease: "easeOut" }}
+            >
+            </motion.div>
+          </div>
+        </motion.div>
+      </motion.div>
+    </main>
   );
 }

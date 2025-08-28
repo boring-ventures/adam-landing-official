@@ -94,10 +94,10 @@ export default function Pricing() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Planes de Precios Transparentes
+            Planes de Adam - Precios Transparentes
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Elige el plan que mejor se adapte a tus necesidades. 
+            Elige el plan de Adam que mejor se adapte a tus necesidades. 
             Todos incluyen nuestra garantía de satisfacción de 30 días.
           </p>
         </div>

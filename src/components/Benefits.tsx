@@ -47,11 +47,11 @@ export default function Benefits() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            ¿Por qué elegirnos?
+            ¿Por qué elegir Adam?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Descubre las ventajas únicas que hacen de nuestra plataforma la elección perfecta 
-            para empresas que buscan crecer y optimizar sus operaciones.
+            Descubre las ventajas únicas que hacen de Adam la plataforma perfecta 
+            para empresas que buscan revolucionar su forma de trabajar y conectar equipos.
           </p>
         </div>
 
