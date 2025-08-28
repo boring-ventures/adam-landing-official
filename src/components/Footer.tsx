@@ -103,22 +103,18 @@ export default function Footer() {
             {/* Contact Info */}
             <motion.div 
               className="space-y-3"
-              variants={containerVariants}
+              variants={itemVariants}
             >
               <motion.div 
                 className="flex items-center gap-3 text-gray-600"
                 variants={itemVariants}
-                whileHover={{ x: 5 }}
-                transition={{ duration: 0.2 }}
               >
                 <Mail size={16} className="text-blue-600" />
-                <span>hola@adam.com</span>
+                <span>adam@example.com</span>
               </motion.div>
               <motion.div 
                 className="flex items-center gap-3 text-gray-600"
                 variants={itemVariants}
-                whileHover={{ x: 5 }}
-                transition={{ duration: 0.2 }}
               >
                 <Phone size={16} className="text-blue-600" />
                 <span>+34 600 000 000</span>
@@ -126,8 +122,6 @@ export default function Footer() {
               <motion.div 
                 className="flex items-center gap-3 text-gray-600"
                 variants={itemVariants}
-                whileHover={{ x: 5 }}
-                transition={{ duration: 0.2 }}
               >
                 <MapPin size={16} className="text-blue-600" />
                 <span>Madrid, España</span>

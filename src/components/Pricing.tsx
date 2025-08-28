@@ -1,6 +1,6 @@
 'use client';
 
-import { Check, Star, Zap } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 
 export default function Pricing() {
   const plans = [

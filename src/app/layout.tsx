@@ -16,9 +16,6 @@ export default function RootLayout({
         <meta charSet="utf-8"/>
         <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
         <title>Adam</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
       </head>
       <body className="bg-white text-gray-800 overflow-x-hidden">
         <div className="overflow-x-hidden">
