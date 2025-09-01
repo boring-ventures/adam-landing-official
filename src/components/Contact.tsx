@@ -207,27 +207,19 @@ export default function Contact() {
               </motion.a>
             </motion.div>
 
-            {/* Dirección */}
+            {/* Información de contacto */}
             <motion.div 
               className="border-t border-gray-200 pt-8"
               variants={itemVariants}
             >
-              <motion.h4 
-                className="text-xl font-medium text-gray-900 mb-4"
-                variants={itemVariants}
-              >
-                Dirección
-              </motion.h4>
               <motion.div 
                 className="space-y-2 text-gray-600 text-sm"
                 variants={containerVariants}
               >
-                <motion.p variants={itemVariants}><span className="font-medium">Calle:</span> Los Robles 266</motion.p>
-                <motion.p variants={itemVariants}><span className="font-medium">Barrio:</span> Altos del Sol</motion.p>
-                <motion.p variants={itemVariants}><span className="font-medium">Ciudad:</span> San Martín de los Andes</motion.p>
-                <motion.p variants={itemVariants}><span className="font-medium">Código Postal:</span> 8370</motion.p>
-                <motion.p variants={itemVariants}><span className="font-medium">Provincia:</span> Neuquén</motion.p>
-                <motion.p variants={itemVariants}><span className="font-medium">País:</span> Argentina</motion.p>
+                <motion.p variants={itemVariants}><span className="font-bold">Dirección:</span> Los Robles 266, Barrio Altos del Sol</motion.p>
+                <motion.p variants={itemVariants}><span className="font-bold">Ciudad:</span> San Martín de los Andes (8370), Neuquén, Argentina</motion.p>
+                <motion.p variants={itemVariants}><span className="font-bold">Teléfono:</span> +54 9 351 533 6420</motion.p>
+                <motion.p variants={itemVariants}><span className="font-bold">Email:</span> adam.rezuc@gmail.com</motion.p>
               </motion.div>
             </motion.div>
           </motion.div>

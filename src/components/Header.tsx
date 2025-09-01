@@ -35,7 +35,7 @@ export default function Header() {
       variants={containerVariants}
     >
       <motion.h1 
-        className="text-xl font-medium self-center"
+        className="text-2xl font-medium self-center"
         variants={itemVariants}
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.2 }}

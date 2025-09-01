@@ -37,29 +37,29 @@ export default function Apartment() {
       >
         <div className="space-y-8">
           <motion.img 
-            alt="Sala de estar moderna con muebles elegantes" 
+            alt="Apartamento 1 - Vista general del departamento" 
             className="w-full h-80 object-cover" 
-            src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            src="/apartment1.jpg"
             variants={imageVariants}
           />
           <motion.img 
-            alt="Cocina equipada con electrodomésticos modernos" 
+            alt="Apartamento 2 - Detalle del espacio" 
             className="w-full h-64 object-cover" 
-            src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            src="/apartment2.jpg"
             variants={imageVariants}
           />
         </div>
         <div className="space-y-8">
           <motion.img 
-            alt="Dormitorio principal con cama king size" 
+            alt="Apartamento 3 - Vista adicional del departamento" 
             className="w-full h-64 object-cover" 
-            src="https://images.unsplash.com/photo-1560448075-bb485b067938?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            src="/apartment3.jpg"
             variants={imageVariants}
           />
           <motion.img 
-            alt="Baño moderno con ducha de lluvia" 
+            alt="Apartamento 4 - Detalle final del espacio" 
             className="w-full h-80 object-cover" 
-            src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            src="/apartment4.jpg"
             variants={imageVariants}
           />
         </div>
@@ -117,7 +117,7 @@ export default function Apartment() {
                 whileHover={{ scale: 1.03, y: -3 }}
               >
                 <h3 className="text-lg font-bold text-gray-900 mb-2">Ubicación</h3>
-                <p className="text-gray-600">Altos del Sol, San Martín de los Andes</p>
+                <p className="text-gray-600">Av. San Martín #1359, Dpto. 26, Centro, San Martín de los Andes</p>
               </motion.div>
               
               <motion.div 

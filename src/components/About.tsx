@@ -62,9 +62,9 @@ export default function About() {
           variants={imageVariants}
         >
           <img 
-            alt="Adam - Tu anfitrión" 
+            alt="Adam Rezuc - Tu anfitrión en San Martín de los Andes" 
             className="w-full h-full object-cover" 
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            src="/adamPhoto.jpg"
           />
         </motion.div>
         

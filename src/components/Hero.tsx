@@ -24,15 +24,15 @@ export default function Hero() {
       {/* Imagen principal con efecto parallax */}
       <div className="relative h-[600px] overflow-hidden">
         <div className="w-full h-full">
-          <img 
-            alt="Imagen de montaña y naturaleza para Adam Rezuc" 
-            className="w-full h-full object-cover" 
-            style={{
-              transform: `scale(${parallaxScale}) translateY(${parallaxY}px)`,
-              transition: 'transform 0.1s ease-out'
-            }}
-            src="https://images.pexels.com/photos/18926515/pexels-photo-18926515.jpeg"
-          />
+                      <img 
+              alt="Departamento de lujo en San Martín de los Andes - Adam Rezuc" 
+              className="w-full h-full object-cover" 
+              style={{
+                transform: `scale(${parallaxScale}) translateY(${parallaxY}px)`,
+                transition: 'transform 0.1s ease-out'
+              }}
+              src="/hero-apartment.jpg"
+            />
         </div>
         
         {/* Overlay con slogan que aparece con scroll */}
