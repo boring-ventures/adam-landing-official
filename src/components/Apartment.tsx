@@ -2,13 +2,15 @@
 
 import { motion } from 'framer-motion';
 import { sectionVariants, titleVariants, imageVariants, cardVariants, textVariants, fadeInVariants } from '../hooks/useScrollAnimation';
+import { useMobileOptimization } from '../hooks/useMobileOptimization';
 
 export default function Apartment() {
+  const { getDuration, getStagger } = useMobileOptimization();
 
   return (
     <motion.section 
       id="apartment" 
-      className="mb-16"
+      className="mb-8 md:mb-16"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.3 }}
@@ -23,14 +25,14 @@ export default function Apartment() {
       
       {/* Galería de imágenes */}
       <motion.div 
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 md:mb-16"
         variants={{
           hidden: { opacity: 0 },
           visible: {
             opacity: 1,
             transition: {
-              duration: 1,
-              staggerChildren: 0.15
+              duration: getDuration(1),
+              staggerChildren: getStagger(0.15)
             }
           }
         }}
@@ -76,8 +78,8 @@ export default function Apartment() {
           visible: {
             opacity: 1,
             transition: {
-              duration: 1,
-              staggerChildren: 0.15
+              duration: getDuration(1),
+              staggerChildren: getStagger(0.15)
             }
           }
         }}
@@ -106,8 +108,8 @@ export default function Apartment() {
                 visible: {
                   opacity: 1,
                   transition: {
-                    duration: 1,
-                    staggerChildren: 0.1
+                    duration: getDuration(1),
+                    staggerChildren: getStagger(0.1)
                   }
                 }
               }}
