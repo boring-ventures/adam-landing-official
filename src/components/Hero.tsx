@@ -2,11 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { useMobileOptimization } from '../hooks/useMobileOptimization';
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0);
-  const { getDuration, getStagger } = useMobileOptimization();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,7 +43,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: getDuration(0.8), ease: "easeOut" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
               Tu estadía cómoda y segura en San Martín de los Andes
             </motion.p>
@@ -64,8 +62,8 @@ export default function Hero() {
                       visible: {
             opacity: 1,
             transition: {
-              duration: getDuration(0.8),
-              staggerChildren: getStagger(0.2)
+              duration: 0.8,
+              staggerChildren: 0.2
             }
           }
           }}
@@ -76,7 +74,7 @@ export default function Hero() {
             hidden: { opacity: 0, x: -50 },
             visible: { opacity: 1, x: 0 }
           }}
-          transition={{ duration: getDuration(0.8), ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="text-4xl md:text-5xl font-normal leading-tight">
             Adam Rezuc, Tu experiencia de lujo en la montaña
@@ -88,7 +86,7 @@ export default function Hero() {
             hidden: { opacity: 0, x: 50 },
             visible: { opacity: 1, x: 0 }
           }}
-          transition={{ duration: getDuration(0.8), ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="md:w-1/2 text-right">
             <motion.p 
@@ -97,9 +95,9 @@ export default function Hero() {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 }
               }}
-              transition={{ duration: getDuration(0.8), ease: "easeOut" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              Te invito a disfrutar mi departamento en el corazón de la ciudad. Gestiono directamente cada reserva, 
+              Soy Adam Rezuc, te invito a disfrutar mi departamento en el corazón de la ciudad, gestiono directamente cada reserva, 
               ofreciendo una experiencia segura, transparente y de confianza para tu estadía.
             </motion.p>
             <motion.div 
@@ -108,7 +106,7 @@ export default function Hero() {
                 hidden: { scaleX: 0 },
                 visible: { scaleX: 1 }
               }}
-              transition={{ duration: getDuration(1), ease: "easeOut" }}
+              transition={{ duration: 1, ease: "easeOut" }}
             >
             </motion.div>
           </div>

@@ -1,156 +1,109 @@
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+'use client';
 
-export const useScrollAnimation = (threshold = 0.3) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { 
-    once: false, 
-    amount: threshold,
-    margin: "-50px 0px -50px 0px"
-  });
+import { Variants } from 'framer-motion';
 
-  return { ref, isInView };
-};
-
-// Variantes optimizadas para scroll perfecto
-export const sectionVariants = {
-  hidden: { 
-    opacity: 0,
-    y: 60
-  },
+export const sectionVariants: Variants = {
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1.2,
-      ease: "easeOut" as const,
-      staggerChildren: 0.15
-    }
-  }
-};
-
-export const itemVariants = {
-  hidden: { 
-    opacity: 0, 
-    y: 40 
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
     transition: {
       duration: 0.8,
-      ease: "easeOut" as const
+      staggerChildren: 0.2
     }
   }
 };
 
-export const titleVariants = {
-  hidden: { 
-    opacity: 0, 
-    y: 50,
-    scale: 0.95
-  },
+export const titleVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    scale: 1,
     transition: {
-      duration: 1.2,
-      ease: "easeOut" as const
+      duration: 0.6,
+      ease: "easeOut"
     }
   }
 };
 
-export const imageVariants = {
-  hidden: { 
-    opacity: 0, 
-    scale: 0.9,
-    y: 30
-  },
+export const imageVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.95 },
   visible: {
     opacity: 1,
     scale: 1,
-    y: 0,
-    transition: {
-      duration: 1.2,
-      ease: "easeOut" as const
-    }
-  }
-};
-
-export const textVariants = {
-  hidden: { 
-    opacity: 0, 
-    x: -40 
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
     transition: {
       duration: 1,
-      ease: "easeOut" as const
+      ease: "easeOut"
     }
   }
 };
 
-export const cardVariants = {
-  hidden: { 
-    opacity: 0, 
-    y: 30,
-    x: 20
-  },
+export const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    x: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  }
+};
+
+export const textVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  }
+};
+
+export const fadeInVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
     transition: {
       duration: 0.8,
-      ease: "easeOut" as const
+      ease: "easeOut"
     }
   }
 };
 
-export const fadeInVariants = {
-  hidden: { 
-    opacity: 0,
-    y: 20
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut" as const
+// Variantes optimizadas para móviles
+export const mobileOptimizedVariants: Variants = {
+  section: {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.4, // Más rápido en móviles
+        staggerChildren: 0.1 // Stagger más rápido
+      }
     }
-  }
-};
-
-export const slideInVariants = {
-  hidden: { 
-    opacity: 0, 
-    x: -50 
   },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 1,
-      ease: "easeOut" as const
+  item: {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.3, // Más rápido en móviles
+        ease: "easeOut"
+      }
     }
-  }
-};
-
-export const slideInRightVariants = {
-  hidden: { 
-    opacity: 0, 
-    x: 50 
   },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 1,
-      ease: "easeOut" as const
+  image: {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5, // Más rápido en móviles
+        ease: "easeOut"
+      }
     }
   }
 };

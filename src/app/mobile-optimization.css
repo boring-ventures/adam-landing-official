@@ -1,0 +1,19 @@
+/* Optimizaciones para dispositivos móviles */
+@media (max-width: 767px) {
+  /* Reducir duración de animaciones en móviles */
+  .motion-reduced {
+    --motion-duration: 0.4s !important;
+    --motion-stagger: 0.1s !important;
+  }
+  
+  /* Animaciones más rápidas para elementos específicos */
+  .hero-animation,
+  .apartment-animation {
+    animation-duration: 0.4s !important;
+  }
+  
+  /* Reducir stagger en móviles */
+  .stagger-children > * {
+    animation-delay: 0.1s !important;
+  }
+}

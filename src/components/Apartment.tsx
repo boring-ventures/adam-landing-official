@@ -2,11 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { sectionVariants, titleVariants, imageVariants, cardVariants, textVariants, fadeInVariants } from '../hooks/useScrollAnimation';
-import { useMobileOptimization } from '../hooks/useMobileOptimization';
 
 export default function Apartment() {
-  const { getDuration, getStagger } = useMobileOptimization();
-
   return (
     <motion.section 
       id="apartment" 
@@ -31,8 +28,8 @@ export default function Apartment() {
           visible: {
             opacity: 1,
             transition: {
-              duration: getDuration(1),
-              staggerChildren: getStagger(0.15)
+              duration: 1,
+              staggerChildren: 0.15
             }
           }
         }}
@@ -78,8 +75,8 @@ export default function Apartment() {
           visible: {
             opacity: 1,
             transition: {
-              duration: getDuration(1),
-              staggerChildren: getStagger(0.15)
+              duration: 1,
+              staggerChildren: 0.15
             }
           }
         }}
@@ -108,8 +105,8 @@ export default function Apartment() {
                 visible: {
                   opacity: 1,
                   transition: {
-                    duration: getDuration(1),
-                    staggerChildren: getStagger(0.1)
+                    duration: 1,
+                    staggerChildren: 0.1
                   }
                 }
               }}
