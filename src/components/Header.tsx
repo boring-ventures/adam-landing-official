@@ -35,12 +35,12 @@ export default function Header() {
       variants={containerVariants}
     >
       <motion.h1 
-        className="text-2xl font-medium self-center"
+        className="text-2xl font-medium self-center section-title"
         variants={itemVariants}
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.2 }}
       >
-        ADAM
+        ADAM REZUC
       </motion.h1>
       
       {/* Navegación alineada a la derecha */}

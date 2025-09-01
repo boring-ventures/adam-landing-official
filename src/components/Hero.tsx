@@ -43,10 +43,10 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
           <div className="text-center text-white">
             <motion.p 
-              className="text-2xl md:text-3xl font-light tracking-wide"
+              className="text-sm md:text-xl font-light tracking-wide body-text"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               Tu estadía cómoda y segura en San Martín de los Andes
@@ -80,7 +80,7 @@ export default function Hero() {
           }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h2 className="text-4xl md:text-5xl font-normal leading-tight">
+          <h2 className="text-4xl md:text-5xl font-normal leading-tight section-title">
             Adam Rezuc, Tu experiencia de lujo en la montaña
           </h2>
         </motion.div>

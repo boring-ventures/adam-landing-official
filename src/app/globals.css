@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import "tailwindcss";
 
 :root {
   --font-helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+  --font-montserrat: 'Montserrat', sans-serif;
 }
 
 body {
-    font-family: var(--font-helvetica);
+    font-family: var(--font-montserrat);
     overflow-x: hidden;
 }
 
@@ -17,6 +21,23 @@ html {
 
 * {
     box-sizing: border-box;
+}
+
+/* Clase para títulos de sección */
+.section-title {
+    font-family: var(--font-playfair);
+}
+
+/* Clase para textos destacados */
+.highlight-text {
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+}
+
+/* Clase para textos normales */
+.body-text {
+    font-family: var(--font-montserrat);
+    font-weight: 400;
 }
 
 /* Animaciones personalizadas para el Hero */

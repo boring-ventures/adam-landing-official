@@ -59,12 +59,12 @@ export default function Contact() {
       viewport={{ once: false, amount: 0.3 }}
       variants={containerVariants}
     >
-      <motion.h2 
-        className="text-4xl md:text-5xl font-normal leading-tight mb-8"
-        variants={itemVariants}
-      >
-        Reservas y Contacto
-      </motion.h2>
+              <motion.h2 
+          className="text-4xl md:text-5xl font-normal leading-tight mb-8 section-title"
+          variants={itemVariants}
+        >
+          Reservas y Contacto
+        </motion.h2>
 
       <motion.div 
         className="max-w-6xl"
@@ -216,10 +216,10 @@ export default function Contact() {
                 className="space-y-2 text-gray-600 text-sm"
                 variants={containerVariants}
               >
-                <motion.p variants={itemVariants}><span className="font-bold">Dirección:</span> Los Robles 266, Barrio Altos del Sol</motion.p>
-                <motion.p variants={itemVariants}><span className="font-bold">Ciudad:</span> San Martín de los Andes (8370), Neuquén, Argentina</motion.p>
-                <motion.p variants={itemVariants}><span className="font-bold">Teléfono:</span> +54 9 351 533 6420</motion.p>
-                <motion.p variants={itemVariants}><span className="font-bold">Email:</span> adam.rezuc@gmail.com</motion.p>
+                <motion.p variants={itemVariants} className="body-text"><span className="font-bold">Dirección:</span> Los Robles 266, Barrio Altos del Sol</motion.p>
+                <motion.p variants={itemVariants} className="body-text"><span className="font-bold">Ciudad:</span> San Martín de los Andes (8370), Neuquén, Argentina</motion.p>
+                <motion.p variants={itemVariants} className="body-text"><span className="font-bold">Teléfono:</span> +54 9 351 533 6420</motion.p>
+                <motion.p variants={itemVariants} className="body-text"><span className="font-bold">Email:</span> adam.rezuc@gmail.com</motion.p>
               </motion.div>
             </motion.div>
           </motion.div>

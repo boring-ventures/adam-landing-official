@@ -14,8 +14,8 @@ export default function Apartment() {
       viewport={{ once: false, amount: 0.3 }}
               variants={sectionVariants}
     >
-              <motion.h2 
-          className="text-4xl md:text-5xl font-normal leading-tight mb-12"
+                              <motion.h2 
+          className="text-4xl md:text-5xl font-normal leading-tight mb-12 section-title"
           variants={titleVariants}
         >
         Departamento
@@ -99,7 +99,7 @@ export default function Apartment() {
           className="mb-8 max-w-2xl"
           variants={textVariants}
         >
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-lg text-gray-600 leading-relaxed body-text">
             Un departamento de 1 habitación en el corazón de San Martín de los Andes, 
             diseñado para ofrecerte una estadía cómoda y memorable en la Patagonia argentina.
           </p>

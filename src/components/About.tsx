@@ -48,12 +48,12 @@ export default function About() {
       viewport={{ once: false, amount: 0.3 }}
       variants={containerVariants}
     >
-      <motion.h2 
-        className="text-4xl md:text-5xl font-normal leading-tight mb-8"
-        variants={itemVariants}
-      >
-        Sobre mí
-      </motion.h2>
+              <motion.h2 
+          className="text-4xl md:text-5xl font-normal leading-tight mb-8 section-title"
+          variants={itemVariants}
+        >
+          Sobre mí
+        </motion.h2>
       
       {/* Contenido principal */}
       <div className="flex flex-col lg:flex-row items-stretch">
@@ -82,7 +82,7 @@ export default function About() {
             variants={itemVariants}
           >
             <motion.p 
-              className="text-xl text-gray-300 leading-relaxed tracking-wide"
+              className="text-xl text-gray-300 leading-relaxed tracking-wide body-text"
               variants={itemVariants}
             >
               Soy Adam Rezuc, anfitrión y propietario del departamento. Me ocupo personalmente de cada detalle: 
