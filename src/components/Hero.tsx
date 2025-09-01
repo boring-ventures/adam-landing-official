@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0);
@@ -24,7 +25,7 @@ export default function Hero() {
       {/* Imagen principal con efecto parallax */}
       <div className="relative h-[600px] overflow-hidden">
         <div className="w-full h-full">
-                      <img 
+                      <Image 
               alt="Departamento de lujo en San Martín de los Andes - Adam Rezuc" 
               className="w-full h-full object-cover" 
               style={{
@@ -32,6 +33,9 @@ export default function Hero() {
                 transition: 'transform 0.1s ease-out'
               }}
               src="/hero-apartment.jpg"
+              width={1200}
+              height={600}
+              priority
             />
         </div>
         

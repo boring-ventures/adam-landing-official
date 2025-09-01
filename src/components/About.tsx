@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function About() {
   const containerVariants = {
@@ -61,10 +62,13 @@ export default function About() {
           className="lg:w-1/3"
           variants={imageVariants}
         >
-          <img 
+          <Image 
             alt="Adam Rezuc - Tu anfitrión en San Martín de los Andes" 
             className="w-full h-full object-cover" 
             src="/adamPhoto.jpg"
+            width={400}
+            height={600}
+            priority
           />
         </motion.div>
         

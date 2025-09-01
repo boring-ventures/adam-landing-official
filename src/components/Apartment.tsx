@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { sectionVariants, titleVariants, imageVariants, cardVariants, textVariants, fadeInVariants } from '../hooks/useScrollAnimation';
+import Image from 'next/image';
 
 export default function Apartment() {
   return (
@@ -35,32 +36,44 @@ export default function Apartment() {
         }}
       >
         <div className="space-y-8">
-          <motion.img 
-            alt="Apartamento 1 - Vista general del departamento" 
-            className="w-full h-80 object-cover" 
-            src="/apartment1.jpg"
-            variants={imageVariants}
-          />
-          <motion.img 
-            alt="Apartamento 2 - Detalle del espacio" 
-            className="w-full h-64 object-cover" 
-            src="/apartment2.jpg"
-            variants={imageVariants}
-          />
+          <motion.div variants={imageVariants}>
+            <Image 
+              alt="Apartamento 1 - Vista general del departamento" 
+              className="w-full h-80 object-cover" 
+              src="/apartment1.jpg"
+              width={400}
+              height={320}
+            />
+          </motion.div>
+          <motion.div variants={imageVariants}>
+            <Image 
+              alt="Apartamento 2 - Detalle del espacio" 
+              className="w-full h-64 object-cover" 
+              src="/apartment2.jpg"
+              width={400}
+              height={256}
+            />
+          </motion.div>
         </div>
         <div className="space-y-8">
-          <motion.img 
-            alt="Apartamento 3 - Vista adicional del departamento" 
-            className="w-full h-64 object-cover" 
-            src="/apartment3.jpg"
-            variants={imageVariants}
-          />
-          <motion.img 
-            alt="Apartamento 4 - Detalle final del espacio" 
-            className="w-full h-80 object-cover" 
-            src="/apartment4.jpg"
-            variants={imageVariants}
-          />
+          <motion.div variants={imageVariants}>
+            <Image 
+              alt="Apartamento 3 - Vista adicional del departamento" 
+              className="w-full h-64 object-cover" 
+              src="/apartment3.jpg"
+              width={400}
+              height={256}
+            />
+          </motion.div>
+          <motion.div variants={imageVariants}>
+            <Image 
+              alt="Apartamento 4 - Detalle final del espacio" 
+              className="w-full h-80 object-cover" 
+              src="/apartment4.jpg"
+              width={400}
+              height={320}
+            />
+          </motion.div>
         </div>
       </motion.div>
 

@@ -72,38 +72,38 @@ export const fadeInVariants: Variants = {
   }
 };
 
-// Variantes optimizadas para móviles
-export const mobileOptimizedVariants: Variants = {
-  section: {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.4, // Más rápido en móviles
-        staggerChildren: 0.1 // Stagger más rápido
-      }
+// Variantes optimizadas para móviles - usando nombres estándar
+export const mobileSectionVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.4, // Más rápido en móviles
+      staggerChildren: 0.1 // Stagger más rápido
     }
-  },
-  item: {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.3, // Más rápido en móviles
-        ease: "easeOut"
-      }
+  }
+};
+
+export const mobileItemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.3, // Más rápido en móviles
+      ease: "easeOut"
     }
-  },
-  image: {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.5, // Más rápido en móviles
-        ease: "easeOut"
-      }
+  }
+};
+
+export const mobileImageVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.5, // Más rápido en móviles
+      ease: "easeOut"
     }
   }
 };
