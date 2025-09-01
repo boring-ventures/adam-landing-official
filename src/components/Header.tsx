@@ -58,6 +58,15 @@ export default function Header() {
           Inicio
         </motion.a>
         <motion.a 
+          href="#apartment" 
+          className="text-gray-600 hover:text-gray-800 transition-colors text-sm font-medium self-center"
+          variants={itemVariants}
+          whileHover={{ scale: 1.05, y: -2 }}
+          transition={{ duration: 0.2 }}
+        >
+          El Departamento
+        </motion.a>
+        <motion.a 
           href="#sobre-mi" 
           className="text-gray-600 hover:text-gray-800 transition-colors text-sm font-medium self-center"
           variants={itemVariants}
@@ -67,13 +76,13 @@ export default function Header() {
           Sobre mí
         </motion.a>
         <motion.a 
-          href="#apartment" 
+          href="#testimonios" 
           className="text-gray-600 hover:text-gray-800 transition-colors text-sm font-medium self-center"
           variants={itemVariants}
           whileHover={{ scale: 1.05, y: -2 }}
           transition={{ duration: 0.2 }}
         >
-          El Departamento
+          Opiniones
         </motion.a>
         <motion.a 
           href="#contact" 
