@@ -8,7 +8,6 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
 export const metadata: Metadata = {
-  title: "Inicio",
   description: "Descubre tu estadía cómoda y segura en San Martín de los Andes. Adam Rezuc te ofrece un departamento de lujo con gestión directa, transparencia y confianza para tu experiencia en la montaña.",
   openGraph: {
     title: "Adam Rezuc - Departamento de Lujo en San Martín de los Andes",
