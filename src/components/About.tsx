@@ -2,8 +2,21 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 export default function About() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -33,7 +46,7 @@ export default function About() {
       opacity: 1,
       scale: 1,
       transition: {
-        duration: 1,
+        duration: 0.6,
         ease: "easeOut" as const
       }
     }
@@ -44,8 +57,7 @@ export default function About() {
       className="mb-16" 
       id="sobre-mi"
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.3 }}
+      {...(isMobile ? { whileInView: "visible", viewport: { once: false, amount: 0.1 } } : { whileInView: "visible", viewport: { once: false, amount: 0.3 } })}
       variants={containerVariants}
     >
               <motion.h2 

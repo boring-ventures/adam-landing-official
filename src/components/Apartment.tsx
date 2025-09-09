@@ -3,16 +3,28 @@
 import { motion } from 'framer-motion';
 import { sectionVariants, titleVariants, imageVariants, cardVariants, textVariants, fadeInVariants } from '../hooks/useScrollAnimation';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 export default function Apartment() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
   return (
     <motion.section 
       id="apartment" 
       className="mb-8 md:mb-16"
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.3 }}
-              variants={sectionVariants}
+      {...(isMobile ? { whileInView: "visible", viewport: { once: false, amount: 0.05 } } : { whileInView: "visible", viewport: { once: false, amount: 0.1 } })}
+      variants={sectionVariants}
     >
                               <motion.h2 
           className="text-4xl md:text-5xl font-normal leading-tight mb-12 section-title"
@@ -29,8 +41,8 @@ export default function Apartment() {
           visible: {
             opacity: 1,
             transition: {
-              duration: 1,
-              staggerChildren: 0.15
+              duration: 0.6,
+              staggerChildren: 0.1
             }
           }
         }}
@@ -81,15 +93,14 @@ export default function Apartment() {
       <motion.div 
         className="w-full"
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.3 }}
+        {...(isMobile ? { whileInView: "visible", viewport: { once: false, amount: 0.05 } } : { whileInView: "visible", viewport: { once: false, amount: 0.1 } })}
         variants={{
           hidden: { opacity: 0 },
           visible: {
             opacity: 1,
             transition: {
-              duration: 1,
-              staggerChildren: 0.15
+              duration: 0.6,
+              staggerChildren: 0.1
             }
           }
         }}
@@ -118,8 +129,8 @@ export default function Apartment() {
                 visible: {
                   opacity: 1,
                   transition: {
-                    duration: 1,
-                    staggerChildren: 0.1
+                    duration: 0.6,
+                    staggerChildren: 0.08
                   }
                 }
               }}

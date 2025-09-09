@@ -2,8 +2,21 @@
 
 import { motion } from 'framer-motion';
 import { titleVariants } from '../hooks/useScrollAnimation';
+import { useState, useEffect } from 'react';
 
 export default function Testimonials() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -62,8 +75,7 @@ export default function Testimonials() {
       id="testimonios" 
       className="mb-16 py-20"
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.3 }}
+      {...(isMobile ? { whileInView: "visible", viewport: { once: false, amount: 0.1 } } : { whileInView: "visible", viewport: { once: false, amount: 0.3 } })}
       variants={containerVariants}
     >
       <motion.h2 
