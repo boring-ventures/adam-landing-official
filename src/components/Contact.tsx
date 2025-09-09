@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 
 export default function Contact() {
+  const phoneNumber = "+54 9 351 533 6420";
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -184,7 +186,7 @@ export default function Contact() {
               variants={containerVariants}
             >
               <motion.a 
-                href="https://wa.me/34600000000?text=Hola%20Adam,%20me%20interesa%20reservar%20tu%20departamento"
+                href="https://wa.me/5493515336420?text=Hola%20Adam,%20me%20interesa%20reservar%20tu%20departamento"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full border-2 border-green-600 text-green-600 py-4 px-8 font-medium hover:bg-green-600 hover:text-white transition-all duration-300 text-center"
@@ -196,7 +198,7 @@ export default function Contact() {
                 WhatsApp
               </motion.a>
               <motion.a 
-                href="mailto:hola@adam.com?subject=Consulta%20de%20Reserva"
+                href="mailto:adam.rezuc@gmail.com?subject=Consulta%20de%20Reserva"
                 className="block w-full border-2 border-gray-900 text-gray-900 py-4 px-8 font-medium hover:bg-gray-900 hover:text-white transition-all duration-300 text-center"
                 variants={itemVariants}
                 whileHover={{ scale: 1.02 }}
@@ -216,10 +218,18 @@ export default function Contact() {
                 className="space-y-2 text-gray-600 text-sm"
                 variants={containerVariants}
               >
-                <motion.p variants={itemVariants} className="body-text"><span className="font-bold">Dirección:</span> Los Robles 266, Barrio Altos del Sol</motion.p>
-                <motion.p variants={itemVariants} className="body-text"><span className="font-bold">Ciudad:</span> San Martín de los Andes (8370), Neuquén, Argentina</motion.p>
-                <motion.p variants={itemVariants} className="body-text"><span className="font-bold">Teléfono:</span> +54 9 351 533 6420</motion.p>
-                <motion.p variants={itemVariants} className="body-text"><span className="font-bold">Email:</span> adam.rezuc@gmail.com</motion.p>
+                <motion.p variants={itemVariants} className="body-text">
+                  <span className="font-bold">Dirección:</span> Los Robles 266, Barrio Altos del Sol
+                </motion.p>
+                <motion.p variants={itemVariants} className="body-text">
+                  <span className="font-bold">Ciudad:</span> San Martín de los Andes (8370), Neuquén, Argentina
+                </motion.p>
+                <motion.p variants={itemVariants} className="body-text">
+                  <span className="font-bold">Teléfono:</span> {phoneNumber}
+                </motion.p>
+                <motion.p variants={itemVariants} className="body-text">
+                  <span className="font-bold">Email:</span> adam.rezuc@gmail.com
+                </motion.p>
               </motion.div>
             </motion.div>
           </motion.div>

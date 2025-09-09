@@ -5,6 +5,7 @@ import { Mail, Phone, MapPin, Facebook, Instagram } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const phoneNumber = "+54 9 351 533 6420";
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -31,6 +32,9 @@ export default function Footer() {
 
 
 
+  const whatsappUrl = "https://wa.me/5493515336420?text=Hola%20Adam,%20me%20interesa%20reservar%20tu%20departamento";
+  const emailUrl = "mailto:adam.rezuc@gmail.com?subject=Consulta%20de%20Reserva";
+
   const footerLinks = {
     alojamiento: [
       { name: 'El Departamento', href: '#apartment' },
@@ -39,8 +43,8 @@ export default function Footer() {
     ],
     contacto: [
       { name: 'Reservas y Contacto', href: '#contact' },
-      { name: 'WhatsApp', href: 'https://wa.me/5493515336420?text=Hola%20Adam,%20me%20interesa%20reservar%20tu%20departamento' },
-      { name: 'Email Directo', href: 'mailto:adam.rezuc@gmail.com?subject=Consulta%20de%20Reserva' }
+      { name: 'WhatsApp', href: whatsappUrl },
+      { name: 'Email Directo', href: emailUrl }
     ],
 
   };
@@ -100,7 +104,7 @@ export default function Footer() {
                 variants={itemVariants}
               >
                 <Phone size={16} className="text-[#1E3C4A]" />
-                <span>+54 9 351 533 6420</span>
+                <span>{phoneNumber}</span>
               </motion.div>
               <motion.div 
                 className="flex items-center gap-3 text-gray-600"

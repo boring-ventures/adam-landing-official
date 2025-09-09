@@ -1,8 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const containerVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: {
@@ -27,9 +31,13 @@ export default function Header() {
     }
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <motion.header 
-      className="flex justify-between items-center mb-1 py-0.5"
+      className="flex justify-between items-center mb-1 py-0.5 relative"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -43,7 +51,7 @@ export default function Header() {
         ADAM REZUC
       </motion.h1>
       
-      {/* Navegación alineada a la derecha */}
+      {/* Navegación desktop */}
       <motion.nav 
         className="hidden md:flex space-x-8 self-center"
         variants={containerVariants}
@@ -94,6 +102,66 @@ export default function Header() {
           Reservas
         </motion.a>
       </motion.nav>
+
+      {/* Botón hamburguesa para móvil */}
+      <motion.button
+        className="md:hidden p-2"
+        onClick={toggleMenu}
+        variants={itemVariants}
+        whileHover={{ scale: 1.1 }}
+        transition={{ duration: 0.2 }}
+      >
+        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+      </motion.button>
+
+      {/* Menú móvil desplegable */}
+      {isMenuOpen && (
+        <motion.div
+          className="absolute top-full left-0 right-0 bg-white shadow-lg border-t border-gray-200 z-50 md:hidden"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.3 }}
+        >
+          <nav className="flex flex-col py-4">
+            <a 
+              href="#hero" 
+              className="px-6 py-3 text-gray-600 hover:text-gray-800 hover:bg-gray-50 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Inicio
+            </a>
+            <a 
+              href="#apartment" 
+              className="px-6 py-3 text-gray-600 hover:text-gray-800 hover:bg-gray-50 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              El Departamento
+            </a>
+            <a 
+              href="#sobre-mi" 
+              className="px-6 py-3 text-gray-600 hover:text-gray-800 hover:bg-gray-50 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Sobre mí
+            </a>
+            <a 
+              href="#testimonios" 
+              className="px-6 py-3 text-gray-600 hover:text-gray-800 hover:bg-gray-50 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Opiniones
+            </a>
+            <a 
+              href="#contact" 
+              className="px-6 py-3 text-gray-600 hover:text-gray-800 hover:bg-gray-50 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Reservas
+            </a>
+          </nav>
+        </motion.div>
+      )}
     </motion.header>
   );
 }
