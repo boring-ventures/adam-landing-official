@@ -84,6 +84,7 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8"/>
         <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <meta name="facebook-domain-verification" content="t1j9l3co12kk5pedla1m5fax8gncpz" />
       </head>
       <body className="bg-white text-gray-800 overflow-x-hidden">
         <div className="overflow-x-hidden">
